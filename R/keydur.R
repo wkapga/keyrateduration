@@ -13,23 +13,16 @@
 #' @param targetdur optional argument what the sum of keyrate durations has to be
 #'
 #' @return tibble of key rate durations
-#'
-#' @import dplyr
-#' @import purrr
-#' @import tibble
-#' @import lubridate
-#'
-#'
 #' @export
-#' @examples
 #'
+#' @importFrom purrr map_dfc map_dbl %>% flatten_dbl
+#' @importFrom tibble as.tibble tibble
+#' @importFrom utils head tail
+#'
+#' @examples
+#'\dontrun{
 #' keydur(c(2,5,10),6.2,1,2,1)
-#' # A tibble: 3 x 2
-#'#kr        val
-#'#<dbl>      <dbl>
-#'#  1     2 0.06492798
-#'#  2     5 4.52113943
-#'#  3    10 1.40085786
+#' }
 
 keydur <- function(keyrates,ttm,coupon,yield,freq,targetdur= NULL) {
   # function to calculate vector of key rate duarations for given keyrates
@@ -54,6 +47,20 @@ keydur <- function(keyrates,ttm,coupon,yield,freq,targetdur= NULL) {
 }
 
 
+#' wg helper function
+#'
+#' @param keyrates vector of keyrates
+#' @param tt time of cash flow to attribute to keyrates
+#'
+#' @return a list of weights with length of keyrates, sum = 1
+#' @export
+#'
+#' @importFrom purrr modify_at map_dbl detect_index
+#'
+#' @examples
+#'\dontrun{
+#' wg(c(2,5,10),6.2)
+#' }
 wg <- function (keyrates,tt) {
   # helper function for key rate duration
   # find index of first keyrate > tt
