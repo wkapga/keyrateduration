@@ -35,14 +35,14 @@ keydur <- function(keyrates,ttm,coupon,yield,freq,targetdur= NULL) {
   # discounted cash flows
   dcf <- cf * ( 1 + yield / 100 ) ^ (-tt)
   # duration per cash flow, total duration would be sum(vec)
-  vec <- dcf * tt / sum(dcf)
+  vec <- dcf * tt / sum( dcf )
   # get matrix of weights
-  kw <- map_dfc(tt, ~ as.tibble(wg(keyrates_expanded,.x)))
+  kw <- map_dfc( tt, ~ as.tibble(wg(keyrates_expanded, .x ) ) )
   # matrix multiplication
-  k <- as.matrix(kw) %*% as.matrix(vec) %>% as.tibble %>%  flatten_dbl()
+  k <- as.matrix( kw ) %*% as.matrix( vec ) %>% as.tibble %>%  flatten_dbl()
 
   # add keyrate at zero to first keyrate and add keyrate far in future to last keyrate
-  k <- c(sum(head(k,2)), k[3:(length(k)-2)], sum(tail(k,2)) )
+  k <- c(sum(head(k,2)), k[3:(length(k)-2)], sum( tail(k,2)) )
 
   # use stated duration if given
   if ( ! is.null(targetdur) ) { k <- k * targetdur/sum(k)  }
