@@ -4,11 +4,25 @@
 \alias{keydur}
 \title{keyrate duration function}
 \usage{
-keydur(ttm, coupon, yield, freq, keyrates, targetdur)
+keydur(keyrates, ttm, coupon, yield, freq, targetdur = NULL)
+}
+\arguments{
+\item{keyrates}{list of keyrates}
+
+\item{ttm}{time until maturity in years}
+
+\item{coupon}{in percent}
+
+\item{yield}{in percent}
+
+\item{freq}{frequency of coupon payments}
+}
+\value{
+tibble of key rate durations
 }
 \description{
 Calculates keyrate duration of a bond
 }
-\details{
-inputs:
+\author{
+wkapga
 }
