@@ -3,7 +3,7 @@ Title: Keyrate Durations
 Version: 0.0.0.9000
 Authors@R: person("wkapga", "wkapga", email = "wkapga@rcm.at", role = c("aut", "cre"))
 Description: keyrate duration calculation for single bond
-Depends: R (>= 3.3.1), tidyverse (>= 1.1.1), lubridate(>= 1.6.0)
+Depends: R (>= 3.3.1), dplyr, purrr, lubridate(>= 1.6.0)
 License: GPL
 Encoding: UTF-8
 LazyData: true
