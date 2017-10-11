@@ -2,3 +2,7 @@
 
 export(add2)
 export(keydur)
+import(dplyr)
+import(lubridate)
+import(purrr)
+import(tibble)

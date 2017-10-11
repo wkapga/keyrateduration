@@ -7,8 +7,14 @@
 add2(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{what you wanna add 2 to}
+}
+\value{
+nothing
 }
 \description{
 Add 2
+}
+\examples{
+add2(7)
 }

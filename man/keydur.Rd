@@ -16,6 +16,8 @@ keydur(keyrates, ttm, coupon, yield, freq, targetdur = NULL)
 \item{yield}{in percent}
 
 \item{freq}{frequency of coupon payments}
+
+\item{targetdur}{optional argument what the sum of keyrate durations has to be}
 }
 \value{
 tibble of key rate durations
@@ -27,11 +29,11 @@ Calculates keyrate duration of a bond
 
 keydur(c(2,5,10),6.2,1,2,1)
 # A tibble: 3 x 2
-kr        val
-<dbl>      <dbl>
- 1     2 0.06492798
- 2     5 4.52113943
- 3    10 1.40085786
+#kr        val
+#<dbl>      <dbl>
+#  1     2 0.06492798
+#  2     5 4.52113943
+#  3    10 1.40085786
 }
 \author{
 wkapga
