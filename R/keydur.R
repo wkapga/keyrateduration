@@ -12,6 +12,8 @@
 #' @param freq frequency of coupon payments
 #'
 #' @return tibble of key rate durations
+#'
+#' @export
 
 keydur <- function(keyrates,ttm,coupon,yield,freq,targetdur= NULL) {
   # function to calculate vector of key rate duarations for given keyrates
