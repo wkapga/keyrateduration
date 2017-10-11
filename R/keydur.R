@@ -14,7 +14,7 @@
 #' @return tibble of key rate durations
 #'
 #' @export
-#' @example
+#' @examples
 #'
 #' keydur(c(2,5,10),6.2,1,2,1)
 #' # A tibble: 3 x 2

@@ -23,6 +23,16 @@ tibble of key rate durations
 \description{
 Calculates keyrate duration of a bond
 }
+\examples{
+
+keydur(c(2,5,10),6.2,1,2,1)
+# A tibble: 3 x 2
+kr        val
+<dbl>      <dbl>
+ 1     2 0.06492798
+ 2     5 4.52113943
+ 3    10 1.40085786
+}
 \author{
 wkapga
 }
