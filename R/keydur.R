@@ -14,6 +14,15 @@
 #' @return tibble of key rate durations
 #'
 #' @export
+#' @example
+#'
+#' keydur(c(2,5,10),6.2,1,2,1)
+#' # A tibble: 3 x 2
+#'kr        val
+#'<dbl>      <dbl>
+#'  1     2 0.06492798
+#'  2     5 4.52113943
+#'  3    10 1.40085786
 
 keydur <- function(keyrates,ttm,coupon,yield,freq,targetdur= NULL) {
   # function to calculate vector of key rate duarations for given keyrates
