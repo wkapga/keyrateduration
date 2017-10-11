@@ -47,9 +47,8 @@ keydur <- function(keyrates,ttm,coupon,yield,freq,targetdur= NULL) {
   # use stated duration if given
   if ( ! is.null(targetdur) ) { k <- k * targetdur/sum(k)  }
 
-  return(tibble( kr = keyrates, val=k))
+  return( tibble( kr = keyrates, val=k ) )
 }
-
 
 #' wg helper function
 #'
