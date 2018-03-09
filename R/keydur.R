@@ -69,10 +69,17 @@ wg <- function (keyrates,tt) {
   # find index of first keyrate > tt
   i <-  min(which(keyrates > tt))
 
+  # alternative:
+  # i <- keyrates %>% detect_index(~ (.x > tt) )
+
   #assign percentages
   w[i] <- (tt-keyrates[i-1] )/ (keyrates[i] - keyrates[i-1])
   w[i-1] <- 1 - w[i]
   return(unlist(w))
+
+
+
+
 }
 
 
